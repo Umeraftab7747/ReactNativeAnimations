@@ -9,16 +9,18 @@ export class DelayAnimation extends React.Component {
 
   startAnimation = () => {
     Animated.sequence([
-      Animated.timing(this.state.color, {
-        toValue: 1,
-        duration: 400,
-        useNativeDriver: false,
-      }),
-      Animated.timing(this.state.scale, {
-        toValue: 2,
-        duration: 400,
-        useNativeDriver: false,
-      }),
+      Animated.parallel([
+        Animated.timing(this.state.scale, {
+          toValue: 2,
+          duration: 400,
+          useNativeDriver: false,
+        }),
+        Animated.timing(this.state.color, {
+          toValue: 1,
+          duration: 400,
+          useNativeDriver: false,
+        }),
+      ]),
       Animated.delay(1500),
       Animated.parallel([
         Animated.timing(this.state.scale, {
