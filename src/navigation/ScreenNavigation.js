@@ -7,6 +7,7 @@ import {MoveAnimation} from '../screens';
 import {OpactiyAnimation} from '../screens';
 import {ScaleAnimation} from '../screens';
 import {ColorAnimation} from '../screens';
+import {ParallerAnimation} from '../screens';
 import {RotateAnimation} from '../screens';
 
 export class ScreenNavigation extends Component {
@@ -14,6 +15,11 @@ export class ScreenNavigation extends Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="ParallerAnimation"
+            component={ParallerAnimation}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="RotateAnimation"
             component={RotateAnimation}

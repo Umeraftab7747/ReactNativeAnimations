@@ -9,7 +9,7 @@ export class RotateAnimation extends React.Component {
   startAnimation = () => {
     Animated.timing(this.state.animation, {
       toValue: 360,
-      duration: 1000,
+      duration: 700,
       useNativeDriver: false,
     }).start();
   };
