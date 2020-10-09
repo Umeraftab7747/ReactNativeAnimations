@@ -9,12 +9,18 @@ import {ScaleAnimation} from '../screens';
 import {ColorAnimation} from '../screens';
 import {ParallerAnimation} from '../screens';
 import {RotateAnimation} from '../screens';
+import {DelayAnimation} from '../screens';
 
 export class ScreenNavigation extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="DelayAnimation"
+            component={DelayAnimation}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="ParallerAnimation"
             component={ParallerAnimation}
