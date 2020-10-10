@@ -12,12 +12,12 @@ export class DelayAnimation extends React.Component {
       Animated.parallel([
         Animated.timing(this.state.scale, {
           toValue: 2,
-          duration: 400,
+          duration: 200,
           useNativeDriver: false,
         }),
         Animated.timing(this.state.color, {
           toValue: 1,
-          duration: 400,
+          duration: 200,
           useNativeDriver: false,
         }),
       ]),
@@ -25,12 +25,12 @@ export class DelayAnimation extends React.Component {
       Animated.parallel([
         Animated.timing(this.state.scale, {
           toValue: 1,
-          duration: 400,
+          duration: 200,
           useNativeDriver: false,
         }),
         Animated.timing(this.state.color, {
           toValue: 0,
-          duration: 400,
+          duration: 200,
           useNativeDriver: false,
         }),
       ]),
