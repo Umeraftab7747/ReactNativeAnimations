@@ -21,10 +21,18 @@ export class TinderScreen extends React.Component {
   });
 
   render() {
+    const RotateInterpolate = this.pan.x.interpolate({
+      inputRange: [-350 / 2, 0, 350 / 2],
+      outputRange: ['-10deg', '0deg', '10deg'],
+    });
+
+    const styleAnimtated = {
+      transform: [{rotate: RotateInterpolate}],
+    };
     return (
       <View style={styles.container}>
         <Animated.View
-          style={this.pan.getTranslateTransform()}
+          style={[styleAnimtated, this.pan.getTranslateTransform()]}
           {...this.panResponder.panHandlers}>
           <View style={styles.box} />
         </Animated.View>
@@ -40,9 +48,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    height: 150,
-    width: 150,
+    height: 550,
+    width: 350,
     backgroundColor: 'tomato',
-    borderRadius: 1000,
+    borderRadius: 10,
   },
 });

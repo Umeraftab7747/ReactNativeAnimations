@@ -23,7 +23,7 @@ export class PanAnimation extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>PAN ANIMATIONS</Text>
+        <Text>PanResponder</Text>
         <Animated.View
           style={this.pan.getTranslateTransform()}
           {...this.panResponder.panHandlers}>

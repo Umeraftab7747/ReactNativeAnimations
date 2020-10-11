@@ -19,15 +19,16 @@ export class ScreenNavigation extends Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="PanAnimation"
-            component={TinderScreen}
-            options={{headerShown: false}}
-          />
-          <Stack.Screen
             name="TinderScreen"
             component={TinderScreen}
             options={{headerShown: false}}
           />
+          <Stack.Screen
+            name="PanAnimation"
+            component={PanAnimation}
+            options={{headerShown: false}}
+          />
+
           <Stack.Screen
             name="DelayAnimation"
             component={DelayAnimation}
