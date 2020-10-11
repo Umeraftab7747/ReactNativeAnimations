@@ -15,8 +15,29 @@ export class TinderScreen extends React.Component {
     onPanResponderMove: (_, gesture) => {
       this.pan.x.setValue(gesture.dx), this.pan.y.setValue(gesture.dy);
     },
-    onPanResponderRelease: () => {
-      this.pan.flattenOffset();
+    onPanResponderRelease: (evt, gestureState) => {
+      // animation for spring
+      if (gestureState.dx > 120) {
+        Animated.spring(this.pan, {
+          toValue: {x: 350 + 100, y: gestureState.dy},
+          useNativeDriver: false,
+        }).start(() => {
+          this.pan.setValue({x: 0, y: 0});
+        });
+      } else if (gestureState.dx < -120) {
+        Animated.spring(this.pan, {
+          toValue: {x: -350 - 100, y: gestureState.dy},
+          useNativeDriver: false,
+        }).start(() => {
+          this.pan.setValue({x: 0, y: 0});
+        });
+      } else {
+        Animated.spring(this.pan, {
+          toValue: {x: 0, y: 0},
+          friction: 4,
+          useNativeDriver: false,
+        }).start();
+      }
     },
   });
 
