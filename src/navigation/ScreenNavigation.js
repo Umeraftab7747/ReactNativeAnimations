@@ -10,12 +10,24 @@ import {ColorAnimation} from '../screens';
 import {ParallerAnimation} from '../screens';
 import {RotateAnimation} from '../screens';
 import {DelayAnimation} from '../screens';
+import {TinderScreen} from '../screens';
+import {PanAnimation} from '../screens';
 
 export class ScreenNavigation extends Component {
   render() {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="PanAnimation"
+            component={TinderScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="TinderScreen"
+            component={TinderScreen}
+            options={{headerShown: false}}
+          />
           <Stack.Screen
             name="DelayAnimation"
             component={DelayAnimation}

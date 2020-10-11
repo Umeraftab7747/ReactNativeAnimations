@@ -5,3 +5,5 @@ export {ColorAnimation} from './ColorAnimation';
 export {RotateAnimation} from './RotateAnimation';
 export {ParallerAnimation} from './ParallerAnimation';
 export {DelayAnimation} from './DelayAnimation';
+export {TinderScreen} from './TinderScreen';
+export {PanAnimation} from './PanAnimation';
